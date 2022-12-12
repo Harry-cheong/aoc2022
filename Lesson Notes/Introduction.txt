@@ -1,0 +1,355 @@
+## Introduction
+
+# C++ 
+* OOP -> clear structure to programs and allows code to be resued
+
+* Used for high performance applications 
+e.g. operating systems, graphical user interfaces and embedded systems 
+
+* high level of control over system resources and memory 
+
+# C vs C++
+* C and C++ support classes and objects, while C does not
+
+
+## Basics
+
+# Notable Header Files
+* Header files add functionality to C++ programs
+e.g.
+Line 1: #include <iostream> is a header file library which contains the functions of program like cout, cin, etc. 
+    1. iostream 
+    2. string
+    3. cmath
+
+
+# Code structure
+    1. Header Files
+
+    2. Namespace
+    * Very commonly used 
+    e.g. Using namespace std
+
+    OR without the std namespace library
+    e.g. std:: string greeting = "Hello" 
+
+    3. function
+    e.g. int main () {...}
+    * ... code body 
+
+    4. return 0 ends the main function
+
+# QoL
+* // -> single line comment
+* /* ...  */ -> multi-line comment
+
+
+## Variables
+
+# Identifiers 
+* Naming Conventions 
+- contain letters, digits and underscores
+- cannot contain whitespaces or special characters like !, #, %, etc 
+- must beign with a letter or an underscores
+- case sensitive
+- reserved words 
+
+
+# Const 
+* Add-on to declare var as Const
+e.g. const int myNum = 15;
+e.g. const double = 3.99;
+
+# Types
+    1. int -> stores integers (whole numbers), without decimals 
+
+    2. double -> stores floating point numbers, with decimals 
+
+    3. float -> stores floating point numbers 
+
+    * double vs float 
+    - float : 4 bytes of memory for storage 
+    double : 8 bytes of memory for storage. 
+
+    - float : comparatively less precision; store decimal numbers with fewer digits. 
+    double : twice the precision; store decimanl numbers with more digits
+
+    4. char -> stores single characters such as 'a' or 'B'
+
+    5. string -> stores text
+
+    6. bool -> stores values with two states: true or false
+
+    [Syntax] ~type variableName = value; ~
+    * declare a variable without assigning the value, and assing the value later
+
+# multiple
+    1. declaring same var, but diff values
+    e.g. int x - 5, y = 6, z = 50;
+
+    2. assign same value to multiple variable 
+    e.g. 
+    int x, y, z;
+    x = y = z = 50;
+
+
+## Output w. cout 
+* (pronounced "see-out") and uses the insertion operator (<<)
+* multiple cout objects on different lines do not create multiple line outputs
+e.g. cout << "Hello World"
+
+# Special chars
+    1. \n -> incl in str to create blank line
+    OR using endl 
+    e.g. count << "Hello World" << endl;
+
+    2. \t -> creates a horizontal tab
+
+    3. \\ -> inserts a backlash chars
+
+    4. \" -> inserts a double quote char 
+
+    # Combining both text and variable
+    e.g. cout << "I am" << myAge << " years old." 
+
+
+## Input w cin 
+* pronounced as "see-in" and uses the extraction operator (>>)
+* to enable input in integrated terminal: File > Preference > Settings > Code Runner: Run in Terminal (tick box)
+
+
+## Advanced File Handling
+
+    1. ofstream file
+    
+    e.g. 
+    // Creation of ofstream class object
+    ofstream fout; 
+
+    string line; 
+
+    // by default ios::out mode, automatically deletes
+    // the content of file. To append the content, open in ios:app 
+    // fout.oen("sample.txt", ios::app)
+
+    // Execute a loop if file successfully opened
+        while (fout) {
+
+            // Read a line from standard input
+            getline(cin, line);
+    }
+
+    2. ifstream file
+
+    e.g. 
+    // Creation of fstream class object
+    fstrem fio;
+
+    string line; 
+
+    // by deafult openmode = ios::in|ios::out mode
+    // Automatically overwrites the content of file, TO 
+
+## Arithmetic Operators 
+* Very similar to javascript, python
+
+    1. + 
+    2. -
+    3. *
+    4. /
+    5. % -> returns the division remainder
+    6. ++ -> Increment
+    7. -- -> Decrement
+
+## Assignment Operators
+
+# Augmented operators 
+    1. +=
+    2. -=
+    3. *=
+    4. /=
+    5. % =
+
+# Bitwise operators
+    1. &=
+    2. |
+    3. ^=
+    4. >>=
+    5. <<=
+
+## Comparison operators
+    1. == 
+    2. !=
+    3. >
+    4. <
+    5. >=
+    6. <=
+
+## Logical Operators 
+    1. && -> Logical and
+    2. || -> Logical or
+    3. ! -> Logical not
+
+## Strings
+* To use strings, include <string> library in the header file 
+
+# String Concatenation 
+    1. using '+' operator
+    e.g. string fullName = firstName + lastName;
+
+    2. append
+    e.g.
+    string firstName = "John";
+    string lastName = "Doe";
+    string fullName = firstName.append(lastName);
+    cout << fullName
+
+# String Methods 
+    *1. .substr(pos, len) -> returns a newly constructed string object with its value initialized to a copy of a sub-string of this object
+    * pos: Position of the first character to be copied 
+    * len: Length of the sub-string 
+
+# Indexing
+* access the characters in str w index no inside []
+
+# Other Functions 
+    *1. substr()
+    [syntax] 
+    ~
+    string.substr(pos, len);
+    1. pos: position of the first char to be copied\
+    2. len: length of the sub-string 
+    ~
+
+# Functions 
+    1. length() OR size() -> returns the length of a string 
+
+    2. getline() -> used w. cin to print > 1 word 
+    e.g. 
+    getline(cin, fullName);  -> accepts more than one word as input 
+
+## Math 
+* can be used with <cmath> library
+    1. cbrt()
+    2. cell() -> rounds to highest nearest integer
+    3. sqrt() -> takes square root
+    4. round() -> rounds to nearest integer
+    ... a lot of other math functions
+
+## Conditions and If statements 
+* Exactly the same as javascript
+
+[Syntax] 
+~
+    if (condition) {
+        // code
+    } else if {
+        //code
+    }
+    else {
+        // code
+    }
+~ 
+
+# Tenary Operator 
+
+[Syntax] ~variable = (condition) ? expressionTrue : expressionFalse; ~
+
+# Switch 
+[Syntax]
+~
+    switch(expression {
+        case x:
+            // code block 
+            break; -> new to c++
+
+        case y: 
+            // code block
+            break;
+
+        default:
+            // code block 
+
+    })
+~
+
+# Keywords
+    1. break 
+    * stop exec of more code and case testing inside the block 
+
+    2. default
+    * specifies some code to run if there is no case match
+
+    3. continue 
+    * the continue statement breaks one iteration of the loop
+
+## While-loop
+
+    1. default while loop
+    [Syntax] 
+    ~
+        while (condition) {
+            // code block to be executed
+        }
+    ~
+
+    2. do... if loop
+    * Loop will always be executed at least once, even if the condition is false, because the code block is executed before condition is tested
+    [Syntax] 
+    ~
+    do {
+        // code block to be executed
+    }
+    while (condition);
+    ~
+
+## for loop
+
+[Syntax]
+~
+for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+}
+* Statement 1 is executed (one time) before the execution of the code block
+* Statement 2 defines the condition for executing the code block
+* Statement 3 is executed (every time) after the code block has been executed 
+~
+
+e.g. 
+for (int i =0; i < 5; i++) {
+    cout << i << "\n"
+}
+
+# Nested Loops
+* The "inner loop" will be executed one time for each iteration of the "outer loop" 
+
+# foreach loop
+[Syntax] for (type variableName : arrayName) {
+    // code block to be executed 
+}
+
+e.g. 
+for (type variableName : arrayName) {
+    // code block to be executed 
+}
+
+
+## Arrays
+
+# Declaration
+* To declare an array, define the variable type, specify the name of the array followed by sqr brackets and specify the number of elements it should store.
+* Good practice to provide size; omission of it will result in a size to be automatically determined by compiler 
+
+e.g. string cars[3] = {'Volvo', 'BMW' , 'Ford'};
+
+# Functions 
+    1. sizeof() -> to get the size of an array 
+
+# mdarray 
+* an array of Arrays
+e.g. 
+string letters[2][4] = {
+    {'A', 'B', 'C', 'D'},
+    {'E', 'F', 'G', 'H'}
+};
+cout << letters[0][2]; // Outputs "C"
