@@ -14,14 +14,15 @@ e.g. operating systems, graphical user interfaces and embedded systems
 
 ## Basics
 
-# Notable Header Files
+# Header Files
 * Header files add functionality to C++ programs
 e.g.
-Line 1: #include <iostream> is a header file library which contains the functions of program like cout, cin, etc. 
+#include <iostream> // Written on line 1; <iostream> is a header file library which contains the functions of program like cout, cin, etc. 
     1. iostream 
     2. string
     3. cmath
 
+<-> Notable Header Files 
 
 # Code structure
     1. Header Files
@@ -205,15 +206,15 @@ e.g. cout << "Hello World"
     cout << fullName
 
 # String Methods 
-    *1. .substr(pos, len) -> returns a newly constructed string object with its value initialized to a copy of a sub-string of this object
+    **1. .substr(pos, len) -> returns a newly constructed string object with its value initialized to a copy of a sub-string of this object
     * pos: Position of the first character to be copied 
     * len: Length of the sub-string 
 
 # Indexing
 * access the characters in str w index no inside []
 
-# Other Functions 
-    *1. substr()
+# Methods
+    **1. substr()
     [syntax] 
     ~
     string.substr(pos, len);
@@ -221,13 +222,18 @@ e.g. cout << "Hello World"
     2. len: length of the sub-string 
     ~
 
-# Functions 
-    1. length() OR size() -> returns the length of a string 
+    2. length() OR size() -> returns the length of a string 
 
-    2. getline() -> used w. cin to print > 1 word 
+# Functions 
+    1. getline() -> used w. cin to print > 1 word 
     e.g. 
     getline(cin, fullName);  -> accepts more than one word as input 
 
+
+## char 
+
+# Functions
+    1. 
 ## Math 
 * can be used with <cmath> library
     1. cbrt()
@@ -342,6 +348,17 @@ for (type variableName : arrayName) {
 
 e.g. string cars[3] = {'Volvo', 'BMW' , 'Ford'};
 
+# code snippets 
+* assigning value to next available slot 
+e.g. 
+string list[100];
+int i = 0;
+while (i<100) {
+    list[i] = 'A';
+    i++;
+}
+
+
 # Functions 
     1. sizeof() -> to get the size of an array 
 
@@ -353,3 +370,156 @@ string letters[2][4] = {
     {'E', 'F', 'G', 'H'}
 };
 cout << letters[0][2]; // Outputs "C"
+
+
+## Structure
+* group several related vars into one place
+* contain many different data types (int, string, bool, etc.)
+
+1. Creating a structure 
+* Two types 
+[Case #1] struct car {...} -> named structure
+* By giving a name to the structure, you can treat it as a data type 
+e.g. 
+car Honda; 
+car Mercedes; 
+
+[Case #2] struct {...} car
+* A variable, car, with the defined struct is created
+
+[Syntax] 
+~
+struct {
+    int myNum; // Member (int variable)
+    string myString; // Member (string variable)
+} myStructure
+~
+
+2. Accessing structure members 
+* To assess members of a structure, use the dot syntax (.)
+
+e.g. 
+myStructure.myNum = 1
+
+
+## References and Pointers
+* are important because they give you the ability to manipulate the data in the computer's memory - which can reduce the code and improve the performance. 
+
+
+## Reference variable 
+* is a "reference" to an existing var, and it is created with the & operator 
+e.g. 
+string food = "Pizza";
+string &meal = food; // Ref. var meal created
+
+
+# Memory Address
+* when we assign a value to the variable, it is stored in this memory address. 
+
+    1. Finding address
+        a. using &
+        e.g. 
+        string meal;
+        cout << &meal; 
+
+        b. using *
+        e.g. 
+        string meal;
+        cout << *meal;
+
+
+## Pointers 
+* stores the memory address as its value 
+
+# Creating pointers 
+* type of the pointer has to match the type of variable you're working with 
+
+e.g. 
+string food = "Pizza"; // A food variable of type string
+string* ptr = &food; // A pointer varialbe, with the name ptr, that stores the address of food
+* ptr holds the value of food's memory address
+
+# Reference and Dereference 
+* Reference operator '&'
+* Dereference operator '*'
+
+e.g.
+...
+// Reference: Output the memory address of food with the pointer
+cout << ptr;
+
+// Dereference: Output the value of food with the pointer 
+cout << *ptr;
+
+# Changing value of pointers
+e.g. 
+...
+*ptr = "Hamburger"
+
+
+## Functions 
+
+# Basics 
+* a funct consist of two parts: Declaraton and Definition
+[Syntax]
+~
+void myFunction(parameter1, parameter2, parameter3) { -> Declaration
+    // code to be executed -> Definition
+}
+~
+
+# Keywords
+    1. void 
+    * the void keyword indicates that the function should not return a value 
+
+    2. int, string, etc data types.
+    * the fn will return a value
+
+    3. return 
+    * returns the result 
+
+# Parameters and Arguments
+* when a parameter is passed to the fn, it is called an argument. 
+
+e.g. 
+void myFunction(string fname) {
+    cout << fname 
+}
+int main() {
+    myFunction("Liam")
+}
+* fname is a parameter, while Liam, Jenny and Anja are arguments 
+
+# Default Parameter Value 
+e.g. 
+void myFunction(string country = "Norway") {
+    cout < country << endl;
+}
+
+# Pass By Reference 
+* by passing a reference to the fn, this can be useful when you need to change the value of the arguments 
+
+e.g. 
+void swapNums(int &x, int &y) {
+    ...
+}
+
+# Overloading Functions 
+* Multiple functions can have the same name as long as the number and/or type of parameters are different. 
+
+# Recursion
+* fn calling itself 
+
+e.g. 
+int sum(int k) {
+    if (k > 0) {
+        return k + sum(k - 1);
+    } else {
+        return 0;
+    }
+} 
+int main() {
+    int result = sum(10);
+    cout << result; 
+    return 0;
+}
