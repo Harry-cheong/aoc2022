@@ -1,0 +1,546 @@
+## Introduction
+
+#TO-READ
+- https://www.geeksforgeeks.org/generics-in-c/
+- https://www.geeksforgeeks.org/templates-cpp/
+
+
+# C++ 
+* OOP -> clear structure to programs and allows code to be resued
+
+* Used for high performance applications 
+e.g. operating systems, graphical user interfaces and embedded systems 
+
+* high level of control over system resources and memory 
+
+# C vs C++
+* C and C++ support classes and objects, while C does not
+
+## Getting Started
+* https://www.freecodecamp.org/news/how-to-compile-your-c-code-in-visual-studio-code/
+
+In summary
+1. MinGW Installation Manager
+2. Download g++ compiler in MinGW
+3. Edit Environment Var, include "C:\MinGW\bin\"
+4. Download coderunner extension
+
+## Basics
+
+# Header Files
+* Header files add functionality to C++ programs
+e.g.
+#include <iostream> // Written on line 1; <iostream> is a header file library which contains the functions of program like cout, cin, etc. 
+    1. iostream 
+    2. string
+    3. cmath
+
+<-> Notable Header Files 
+
+# Code structure
+    1. Header Files
+
+    2. Namespace
+    * Very commonly used 
+    e.g. Using namespace std
+
+    OR without the std namespace library
+    e.g. std:: string greeting = "Hello" 
+
+    3. function
+    e.g. int main () {...}
+    * ... code body 
+
+    4. return 0 ends the main function
+
+# QoL
+* // -> single line comment
+* /* ...  */ -> multi-line comment
+
+
+## Variables
+
+# Identifiers 
+* Naming Conventions 
+- contain letters, digits and underscores
+- cannot contain whitespaces or special characters like !, #, %, etc 
+- must beign with a letter or an underscores
+- case sensitive
+- reserved words 
+
+
+# Const 
+* Add-on to declare var as Const
+e.g. const int myNum = 15;
+e.g. const double = 3.99;
+
+
+# Types
+    1. int -> stores integers (whole numbers), without decimals 
+
+    2. double -> stores floating point numbers, with decimals 
+
+    3. float -> stores floating point numbers 
+
+    * double vs float 
+    - float : 4 bytes of memory for storage 
+    double : 8 bytes of memory for storage. 
+
+    - float : comparatively less precision; store decimal numbers with fewer digits. 
+    double : twice the precision; store decimanl numbers with more digits
+
+    4. char -> stores single characters such as 'a' or 'B'
+    * in single quotations 
+
+    5. string -> stores text
+    * in double quotations
+
+    6. bool -> stores values with two states: true or false
+
+    [Syntax] ~type variableName = value; ~
+    * declare a variable without assigning the value, and assing the value later
+
+
+# multiple
+    1. declaring same var, but diff values
+    e.g. int x - 5, y = 6, z = 50;
+
+    2. assign same value to multiple variable 
+    e.g. 
+    int x, y, z;
+    x = y = z = 50;
+
+
+## Output w. cout 
+* (pronounced "see-out") and uses the insertion operator (<<)
+* multiple cout objects on different lines do not create multiple line outputs
+e.g. cout << "Hello World"
+
+
+# Special chars
+    1. \n -> incl in str to create blank line
+    OR using endl 
+    e.g. count << "Hello World" << endl;
+
+    2. \t -> creates a horizontal tab
+
+    3. \\ -> inserts a backlash chars
+
+    4. \" -> inserts a double quote char 
+
+    # Combining both text and variable
+    e.g. cout << "I am" << myAge << " years old." 
+
+
+## Input w cin 
+* pronounced as "see-in" and uses the extraction operator (>>)
+* to enable input in integrated terminal: File > Preference > Settings > Code Runner: Run in Terminal (tick box)
+
+
+## Advanced File Handling
+
+    1. ofstream file
+    
+    e.g. 
+    // Creation of ofstream class object
+    ofstream fout; 
+
+    string line; 
+
+    // by default ios::out mode, automatically deletes
+    // the content of file. To append the content, open in ios:app 
+    // fout.oen("sample.txt", ios::app)
+
+    // Execute a loop if file successfully opened
+        while (fout) {
+
+            // Read a line from standard input
+            getline(cin, line);
+    }
+
+    2. ifstream file
+
+    e.g. 
+    // Creation of fstream class object
+    fstrem fio;
+
+    string line; 
+
+    // by deafult openmode = ios::in|ios::out mode
+    // Automatically overwrites the content of file, TO 
+
+
+## Arithmetic Operators 
+* Very similar to javascript, python
+
+    1. + 
+    2. -
+    3. *
+    4. /
+    5. % -> returns the division remainder
+    6. ++ -> Increment
+    7. -- -> Decrement
+
+
+## Assignment Operators
+
+# Augmented operators 
+    1. +=
+    2. -=
+    3. *=
+    4. /=
+    5. % =
+
+# Bitwise operators
+    1. &=
+    2. |
+    3. ^=
+    4. >>=
+    5. <<=
+
+
+## Comparison operators
+    1. == 
+    2. !=
+    3. >
+    4. <
+    5. >=
+    6. <=
+
+
+## Logical Operators 
+    1. && -> Logical and
+    2. || -> Logical or
+    3. ! -> Logical not
+
+
+## Strings
+* To use strings, include <string> library in the header file 
+
+# String Concatenation 
+    1. using '+' operator
+    e.g. string fullName = firstName + lastName;
+
+    2. append
+    e.g.
+    string firstName = "John";
+    string lastName = "Doe";
+    string fullName = firstName.append(lastName);
+    cout << fullName
+
+# Indexing
+* access the characters in str w index no inside []
+
+# Methods
+    **1. substr()
+    [syntax] 
+    ~
+    string.substr(pos, len);
+    1. pos: position of the first char to be copied\
+    2. len: length of the sub-string 
+    ~
+
+    2. length() OR size() -> returns the length of a string 
+
+# Functions 
+    1. getline() -> used w. cin to print > 1 word 
+    e.g. 
+    getline(cin, fullName);  -> accepts more than one word as input 
+
+
+## char 
+
+# Functions
+    1. 
+
+
+## Math 
+* can be used with <cmath> library
+    1. cbrt()
+    2. cell() -> rounds to highest nearest integer
+    3. sqrt() -> takes square root
+    4. round() -> rounds to nearest integer
+    ... a lot of other math functions
+
+## Conditions and If statements 
+* Exactly the same as javascript
+
+[Syntax] 
+~
+    if (condition) {
+        // code
+    } else if {
+        //code
+    }
+    else {
+        // code
+    }
+~ 
+
+# Tenary Operator 
+
+[Syntax] ~variable = (condition) ? expressionTrue : expressionFalse; ~
+
+# Switch 
+[Syntax]
+~
+    switch(expression) {
+        case x:
+            // code block 
+            break; -> new to c++
+
+        case y: 
+            // code block
+            break;
+
+        default:
+            // code block 
+
+    })
+~
+
+# Keywords
+    1. break 
+    * stop exec of more code and case testing inside the block 
+
+    2. default
+    * specifies some code to run if there is no case match
+
+    3. continue 
+    * the continue statement breaks one iteration of the loop
+
+## While-loop
+
+    1. default while loop
+    [Syntax] 
+    ~
+        while (condition) {
+            // code block to be executed
+        }
+    ~
+
+    2. do... if loop
+    * Loop will always be executed at least once, even if the condition is false, because the code block is executed before condition is tested
+    [Syntax] 
+    ~
+    do {
+        // code block to be executed
+    }
+    while (condition);
+    ~
+
+## for loop
+
+[Syntax]
+~
+for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+}
+* Statement 1 is executed (one time) before the execution of the code block
+* Statement 2 defines the condition for executing the code block
+* Statement 3 is executed (every time) after the code block has been executed 
+~
+
+e.g. 
+for (int i =0; i < 5; i++) {
+    cout << i << "\n"
+}
+
+# Nested Loops
+* The "inner loop" will be executed one time for each iteration of the "outer loop" 
+
+# foreach loop
+[Syntax] for (type variableName : arrayName) {
+    // code block to be executed 
+}
+
+e.g. 
+for (type variableName : arrayName) {
+    // code block to be executed 
+}
+
+
+## Arrays
+
+# Declaration
+* To declare an array, define the variable type, specify the name of the array followed by sqr brackets and specify the number of elements it should store.
+* Good practice to provide size; omission of it will result in a size to be automatically determined by compiler 
+
+e.g. string cars[3] = {'Volvo', 'BMW' , 'Ford'};
+
+# code snippets 
+* assigning value to next available slot 
+e.g. 
+string list[100];
+int i = 0;
+while (i<100) {
+    list[i] = 'A';
+    i++;
+}
+
+
+# Functions 
+    1. sizeof() -> to get the size of an array 
+
+# mdarray 
+* an array of Arrays
+e.g. 
+string letters[2][4] = {
+    {'A', 'B', 'C', 'D'},
+    {'E', 'F', 'G', 'H'}
+};
+cout << letters[0][2]; // Outputs "C"
+
+
+## Structure
+* group several related vars into one place
+* contain many different data types (int, string, bool, etc.)
+
+1. Creating a structure 
+* Two types 
+[Case #1] struct car {...} -> named structure
+* By giving a name to the structure, you can treat it as a data type 
+e.g. 
+car Honda; 
+car Mercedes; 
+
+[Case #2] struct {...} car
+* A variable, car, with the defined struct is created
+
+[Syntax] 
+~
+struct {
+    int myNum; // Member (int variable)
+    string myString; // Member (string variable)
+} myStructure
+~
+
+2. Accessing structure members 
+* To assess members of a structure, use the dot syntax (.)
+
+e.g. 
+myStructure.myNum = 1
+
+
+## References and Pointers
+* are important because they give you the ability to manipulate the data in the computer's memory - which can reduce the code and improve the performance. 
+
+
+## Reference variable 
+* is a "reference" to an existing var, and it is created with the & operator 
+e.g. 
+string food = "Pizza";
+string &meal = food; // Ref. var meal created
+
+
+# Memory Address
+* when we assign a value to the variable, it is stored in this memory address. 
+
+    1. Finding address
+        a. using &
+        e.g. 
+        string meal;
+        cout << &meal; 
+
+        b. using *
+        e.g. 
+        string meal;
+        cout << *meal;
+
+
+## Pointers 
+* stores the memory address as its value 
+
+# Creating pointers 
+* type of the pointer has to match the type of variable you're working with 
+
+e.g. 
+string food = "Pizza"; // A food variable of type string
+string* ptr = &food; // A pointer varialbe, with the name ptr, that stores the address of food
+* ptr holds the value of food's memory address
+
+# Reference and Dereference 
+* Reference operator '&'
+* Dereference operator '*'
+
+e.g.
+...
+// Reference: Output the memory address of food with the pointer
+cout << ptr;
+
+// Dereference: Output the value of food with the pointer 
+cout << *ptr;
+
+# Changing value of pointers
+e.g. 
+...
+*ptr = "Hamburger"
+
+
+## Functions 
+
+# Basics 
+* a funct consist of two parts: Declaraton and Definition
+[Syntax]
+~
+void myFunction(parameter1, parameter2, parameter3) { -> Declaration
+    // code to be executed -> Definition
+}
+~
+
+# Keywords
+    1. void 
+    * the void keyword indicates that the function should not return a value 
+
+    2. int, string, etc data types.
+    * the fn will return a value
+
+    3. return 
+    * returns the result 
+
+# Parameters and Arguments
+* when a parameter is passed to the fn, it is called an argument. 
+
+e.g. 
+void myFunction(string fname) {
+    cout << fname 
+}
+int main() {
+    myFunction("Liam")
+}
+* fname is a parameter, while Liam, Jenny and Anja are arguments 
+
+# Parameter - value
+e.g. 
+void myFunction(string country = "Norway") {
+    cout < country << endl;
+}
+
+# Parameter - address
+* by passing a reference to the fn, this can be useful when you need to change the value of the arguments 
+* (*) and (&) operator used
+
+e.g. 
+void swapNums(int &x, int &y) {
+    ...
+}
+
+# Overloading Functions 
+* Multiple functions can have the same name as long as the number and/or type of parameters are different. 
+
+# Recursion
+* fn calling itself 
+
+e.g. 
+int sum(int k) {
+    if (k > 0) {
+        return k + sum(k - 1);
+    } else {
+        return 0;
+    }
+} 
+int main() {
+    int result = sum(10);
+    cout << result; 
+    return 0;
+}

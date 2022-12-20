@@ -1,0 +1,26 @@
+## String Header Library
+
+## String Function
+    1. size_t find(const string&str, size_t pos = 0)
+    * it is used to find the first occurrence of a sub-string in the specified string being called upon
+
+    int main(
+        string str = "geeksforgeeks";
+        string str1 = "geeks";
+
+        // Find first occurrence of "geeks"
+        size_t found = str.find(str1);
+        if (found != string::npos)
+            cout << found // Result: 0
+        
+        // Find next occurrence of "geeks"
+        char arr[] = "geeks"; // C style string
+        found = str.find(arr, found+1);
+        if (found != string::npos)
+            cout << found; // Result: 8
+        return 0;
+    )
+
+    2. .substr(pos, len) -> returns a newly constructed string object with its value initialized to a copy of a sub-string of this object
+    * pos: Position of the first character to be copied 
+    * len: Length of the sub-string 

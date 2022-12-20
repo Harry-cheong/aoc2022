@@ -1,0 +1,93 @@
+## Containers
+
+# How to create a containers
+[Syntax]
+~
+#include <queue>
+queue<type> q; // type indicates the data type stored in the queue 
+~
+
+## Container Adaptors 
+
+## Queue 
+* implements FIFO (First In First Out)
+
+# Queue - Methods 
+    1. push()
+    - insert an element at the back of the queue 
+
+    2. pop()
+    - removes an element from the front of the queue
+    - no element is returned; void 
+
+    3. front()
+    - returns the first element of the queue
+
+    4. back()
+    - returns the last element of the queue
+
+    5. back()
+    - returns the last element of the queue 
+
+    6. size()
+    - returns the number of elements in the queue 
+
+    7. empty()
+    - returns true if the queue is empty 
+
+
+## Stacks 
+* Implements LIFO (Last In First Out)
+
+# Stacks - How to create a Stacks
+
+^ =queue 
+
+# Stack - Methods
+    1. .empty()
+    - returns whether the stack is empty
+
+    2. .size()
+    - returns the size of the stack
+
+    3. .top()
+    - returns a reference to the top most element of the stack
+
+    4. .push(g)
+    - adds the element 'g' at the top of the stack 
+
+    5. .pop()
+    - deletes the top most element of the stack
+
+
+## Deque 
+* is a sequential container that provides the functionality of a queue and stack
+
+## Deque - Methods 
+    1. .push_back()
+    - inserts element at the back
+    
+    2. .push_front()
+    - inserts element at the front
+
+    3. .pop_back()
+    - removes element from the back
+
+    4. .pop_front()
+    - removes element from the front
+
+    5. .front()
+    - returns element from the front
+
+    6. .back()
+    - returns the element at the back
+
+    7. .at()
+    - sets/returns the element at specified index
+
+    8. .size()
+    - returns the number of elements
+
+    9. .empty()
+    - returns true if the deque is empty
+

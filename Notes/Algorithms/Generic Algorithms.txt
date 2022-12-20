@@ -1,0 +1,12 @@
+## Generic Algorithms
+* a compilation of useless algorithms that are too "basic" or niche
+
+## Finding duplicates inside an array
+
+e.g. 
+for(int i = 0; i < userNumbers.size() - 1; i++) {
+    if (userNumbers[i] == userNumbers[i + 1]) {
+        userNumbers.erase(userNumbers.begin() + i);
+        i--;
+    }
+}

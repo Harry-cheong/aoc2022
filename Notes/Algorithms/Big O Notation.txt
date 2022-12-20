@@ -1,0 +1,53 @@
+## Big O Notation
+* is a metric for algorithm scalability 
+"The entire point of Big-O notation is to be able to compare how efficiently one algorithm solves big problems compared to another" 
+
+    1. O(1)
+    * run in the same amount of time no mater what
+
+    e.g. 
+    - 1 item, 1 second
+    - 10 items, 1 second
+    - 100 items, 1 second
+
+    Use case: Determining if a binary number is odd or even
+
+    2. O(log n)
+    * the calculation time barely increases as you exponentially increase the input number
+
+    e.g. 
+    - 1 item, 1 second
+    - 10 items, 2 seconds 
+    - 100 items, 3 seconds
+
+    Use case: Binary search
+
+    3. O(n)
+    * calculation time increases at the same pace as the input 
+
+    e.g. 
+    - 1 item, 1 second
+    - 10 items, 10 seconds
+    - 100 items, 100 seconds
+
+    Use case: Unsorted list search
+
+    4. O(n^2)
+    * calculation time increases at the pace of n^2
+
+    e.g. 
+    - 1 item, 1 second
+    - 10 items, 100 seconds
+    - 100 items, 10,000 seconds
+
+    Use case: Bubble sort
+
+    5. O(n!)
+    * calculation time increases at the pce of n!, which means if n is 5 it's 120. This isnt so bad at low values of n, but it quickly become impossible. 
+    
+    e.g. 
+    - N = 1, 1 option
+    - N = 10, 3,628,800 options
+    - N = 100, ...
+
+    Use case: Travelling salesman

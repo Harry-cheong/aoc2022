@@ -1,0 +1,60 @@
+## Standard Template Library (STL)
+* is a set of C++ template classes to provide common programming data structures and functions such as lists, stacks, arrays, etc. 
+*is a library of container classes,n algorithms, and iterators
+
+
+## Algorithms 
+* the header algorithm defines a collection of functions specially designed to be used on a range of elements. They act on containers and provide means for various operations for the contents of the containers
+
+Algorithm
+    - sorting 
+    - searching
+    - important stl algorithms
+    - useful array algorithms
+    - partition operations 
+
+Numeric
+    - valarray class
+
+
+## Containers
+* store objects and data. 
+* a total seven standards "first-class" container classes and three container adaptor classes and only seven header files that provide access to these containers or container adaptors
+
+Sequence containers
+    - vector
+    - list
+    - dereque
+    - arrays
+    - forward_list (C++11)
+
+Container adaptors
+    - queue 
+    - priority queue
+    - stack 
+
+Associative containers
+    - set
+    - multiset
+    - map
+    - multimap
+
+Unordered Associative containers
+    - unordered_set (C++11)
+    - unordered_multiset (C++11)
+    - unordered_map (C++11)
+    - unordered_multimap (C++11)
+
+
+## Functions
+* include classes that overload the function call operator. Instances of such classes are called functions objects or functors. Functors allow the working of the associated function to be customized with the help of parameters to be passed 
+
+
+## Iterators
+* used for working upon a sequence of values
+    -  Iterators 
+
+
+## Utility Library 
+* Defined in header <utility>
+    - pair
