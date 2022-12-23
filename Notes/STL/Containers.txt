@@ -1,18 +1,77 @@
 ## Containers
 
-# How to create a containers
+# How to create containers
 [Syntax]
 ~
 #include <queue>
 queue<type> q; // type indicates the data type stored in the queue 
 ~
 
-## Container Adaptors 
 
-## Queue 
+## Associative Containers
+*  elements are no longer ordered but instead have assocations with each other used for determining uniqueness or mappings
+
+
+#1 Set
+* is a container with unique elements
+* can add one of each element to a set; any other additions are ignored
+
+#1.1 Set - Methods
+    1. begin()
+    - returns an iterator to the first element in the set
+
+    2. end()
+    - returns an iterator to the theoretical element that follows the last element in the set
+
+    3. size()
+    - returns the number of elements in the set
+
+    4. max_size() // Constant size of 461168601842738790
+    - returns the maximum number of elements that the set can hold
+
+    5. empty()
+    - returns whether the set is empty
+
+    6. insert(const_n)
+    - inserts a new element 'n' into the set
+
+    7. erase(const_n) / erase(iterator_pos)
+    - deletes the value 'n' / element at pos given passed in the parameter from a set
+
+    8. clear()
+    - removes all the elements present in a set
+
+#2 multiset
+* is like a set, but you can put more than one of an element in
+* the multiset keeps track of how many of each kind of element are in the structure
+
+#2.2 multiset - Methods
+^ incl. of all methods in set
+    1. .count()
+    - counts elements with a specific key
+
+#3 map
+* associative array, is a structure in which you insert key-value pairs; then you can look up any value by supplying the key
+
+#3.1 map - Methods
+^ incl of all methods in set
+    1. at() 
+    - returns a reference to the mapped value of the element identified with key k
+
+    2. count()
+    - count elements with a specific key
+
+#4 multimap
+* is a map that allows for insertion for multiple values for the same key. When you do a key lookup, you get back a container with all the values in it
+
+
+## Container Adaptors 
+* Adaptors are data types from STL that adapt a container to provide specific interface
+
+#1 Queue 
 * implements FIFO (First In First Out)
 
-# Queue - Methods 
+#1.1 Queue - Methods 
     1. push()
     - insert an element at the back of the queue 
 
@@ -35,59 +94,73 @@ queue<type> q; // type indicates the data type stored in the queue
     7. empty()
     - returns true if the queue is empty 
 
-
-## Stacks 
+#2 Stacks 
 * Implements LIFO (Last In First Out)
 
-# Stacks - How to create a Stacks
-
-^ =queue 
-
-# Stack - Methods
-    1. .empty()
+#2.1 Stack - Methods
+    1. empty()
     - returns whether the stack is empty
 
-    2. .size()
+    2. size()
     - returns the size of the stack
 
-    3. .top()
+    3. top()
     - returns a reference to the top most element of the stack
 
-    4. .push(g)
+    4. push(g)
     - adds the element 'g' at the top of the stack 
 
-    5. .pop()
+    5. pop()
     - deletes the top most element of the stack
 
+#3 priority_queue 
+* is a container providing sorted-order access to elements. 
+* specifically designed such that its first element is always the greatest of the elements it contains 
 
-## Deque 
+## Sequential Containers
+* data in sequence container is reliably ordered
+
+#1 vector
+* is a bit like a flexibly-sized array
+* are random-access, meaning you can access any element with integer index in constant time 
+* can add or remove fr back of the vector 
+
+
+#2 Deque (aka double-ended queue)
 * is a sequential container that provides the functionality of a queue and stack
+* not guranteed to be contiguous in memory (???)
 
-## Deque - Methods 
-    1. .push_back()
+
+#2.1 Deque - Methods 
+    1. push_back()
     - inserts element at the back
     
-    2. .push_front()
+    2. push_front()
     - inserts element at the front
 
-    3. .pop_back()
+    3. pop_back()
     - removes element from the back
 
-    4. .pop_front()
+    4. pop_front()
     - removes element from the front
 
-    5. .front()
+    5. front()
     - returns element from the front
 
-    6. .back()
+    6. back()
     - returns the element at the back
 
-    7. .at()
+    7. at()
     - sets/returns the element at specified index
 
-    8. .size()
+    8. size()
     - returns the number of elements
 
-    9. .empty()
+    9. empty()
     - returns true if the deque is empty
 
+
+#3 list (aka linked list)
+* data are linked together by pointers
+* constant-time access to the beginning and the end, but in order to get anywhere in the middle you need to iterate through the list. 
+* can add elements anywhere in the list in constant time, though, if you already have a pointer to one of the nearby nodes

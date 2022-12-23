@@ -97,8 +97,10 @@ e.g. const double = 3.99;
 
     6. bool -> stores values with two states: true or false
 
+    7. auto -> declare a variable with a complicated type
+
     [Syntax] ~type variableName = value; ~
-    * declare a variable without assigning the value, and assing the value later
+    * declare a variable without assigning the value, and assigning the value later
 
 
 # multiple
@@ -110,6 +112,27 @@ e.g. const double = 3.99;
     int x, y, z;
     x = y = z = 50;
 
+# Type Conversion
+    1. char -> int
+    * char, in this case, is an int with char type
+    * mainly used when iterating through string
+    * using int() -> uses typecasting
+    e.g. 
+    char fav = '1';
+    int convFav = int(fav - "0");
+
+    2. char/string -> int
+    * a int, with string type, will be converted to int; however the same does not apply to char
+    * using stoi()
+    e.g. 
+    char fav = "1";
+    int convFav = stoi(fav);
+
+    3. any type -> string
+    * using to_string()
+    e.g.
+    int fav = "93893289";
+    string convFav = to_string(fav);
 
 ## Output w. cout 
 * (pronounced "see-out") and uses the insertion operator (<<)
@@ -236,7 +259,7 @@ e.g. cout << "Hello World"
     [syntax] 
     ~
     string.substr(pos, len);
-    1. pos: position of the first char to be copied\
+    1. pos: position of the first char to be copied
     2. len: length of the sub-string 
     ~
 
@@ -543,4 +566,159 @@ int main() {
     int result = sum(10);
     cout << result; 
     return 0;
+}
+
+
+## Object Oriented Programming (aka OOP)
+* OOP is faster and easier to executed
+* OOP provides a clear structure for the programs
+* OOP helps to keep code dry and makes the code easier to maintain, modify and debug
+* OOP makes it possible to create full reusuable appliations with less code and shorter development time
+
+# Create a class
+* using the class keyword
+e.g. 
+class MyClass {             // The class
+    public:                 // Access specifier
+        int myNum;          // Attribute (int variable)
+        string myString;    // Attribute (string variable)
+}
+* the public keyword is an access specifier, which specifies that members of the class are accessible from outside the class
+* inside the class, there are 2 attributes
+
+# Class Methods 
+
+    #1 Inside class definition
+    e.g. 
+    class MyClass {
+        public:
+            void myMethod() {
+        class 
+            cout << "Hello World!"';   
+            }
+    };
+
+    #2 Outside class definition
+    e.g. 
+    class MyClass {
+        public:
+            void myMethod();
+    };
+
+    // Method/function definition outside the class
+    void MyClass::myMethod() {
+        cout << "Hello World!";
+    }
+
+# Constructors 
+* is a special method that is automatically called when an object of a class is created
+* to create a constructor, use the same name as the class, followed by parentheses()
+* like class methods, constructors can be defined inside or outside the class
+
+e.g. 
+    class MyClass {
+        public:
+            MyClass(parameter1, parameter2 ...) { // setting initial values for attributes
+                ...
+            }
+    }
+
+# Access specifier
+* public - members are accessible from outside the class
+* private - members cannot be accessed from outside the class
+* protected - members cannot be accessed from outside the class, however, they can be accessed in inherited classes. 
+* Note: by default, all members of a class are private if you don't specify an access specifier
+
+# Encapsulation
+* make sure that "sensitive" data is hidden from users
+* if you want others to read or modify the value of a private member, you can provide public get and set methods
+
+* Why: #1: ensures better control of your data, because you can change one part of the code without affecting other parts
+* Why: #2: Increased security of data
+e.g. 
+    class Employee {
+        private:
+        // Private attribute
+            int salary;
+
+        public:
+        // Setter
+            coid setSalary(int s) {
+                salary = s;
+            }
+z
+    }
+
+// Inheritance
+* derived class (child) - the class that inherits from another class
+* base class (parent) - the class being inherited 
+* use the : symbol
+
+e.g. 
+// Base class
+class Vehicle {
+    ...
+}
+
+// Derived class
+class Car: public Vehicle {
+    ...
+}
+
+// Multi-level Inheritance
+* a class can also be derived from one class
+
+// Multiple Inheritance
+* a class can also be derived from more than one base class, using a comma-separated list
+
+// Polymorphism 
+* means "many forms" and it occurs when we have many classes that are related to each other by Inheritance
+* uses those methods to perform different tasks
+* useful for code reusuability: reuse attributes and methods of an existing class when you create a new class
+e.g. 
+// Base class
+class Animal {
+    public:
+        void animalSound() {
+            cout << "The animal makes a sound";
+        }
+};
+
+// Derived class
+class Pig: public Animal {
+    public: 
+        void animalSound() { -> overrides the animalSound() function in the base class
+            cout << "The pig says: wee wee";
+        }
+}
+
+# Exceptions
+* Exception Handing consist of three keywords: try, throw and catch:
+* keyword 'try' : allows you to define a block of code to be tested for errors while it is being executed
+* keyword 'throw': throws an exception when a problem is detected which lets us create a custom errors
+* keyword 'catch' : allows you to define a block of code to be executed, if an error occurs in the try block 
+
+[Syntax]
+~
+try {
+    // Block of code to try
+    throw exception; // Throw an exception when a problem arise
+}
+catch() {
+    // Block of code to handle errors
+}
+~
+
+* Handle any type of exceptions (...)
+e.g.
+try {
+    int age = 15;
+    if (age >= 18) {
+        cout << "Access granted - you are old enough.";
+    } else {
+        throw 505;
+    }
+}
+catch (...) {
+    cout << "Access denied - You must be at least 18 years old.\n";
 }
