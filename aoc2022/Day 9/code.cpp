@@ -24,37 +24,22 @@ void moveWithDirection(char direction, int &xcoord, int &ycoord) {
 
 void moveDiagonal(int xhead, int &xtail, int yhead, int &ytail) {
 
-    // First quadrant
-    if (xhead > xtail && yhead > ytail) {
+    if (xhead > xtail ) {
         xtail++;
+    }
+
+    else if (xhead < xtail) {
+        xtail--;
+    }
+
+    if (yhead > ytail) {
         ytail++;
     }
 
-    // Second quadrant
-    else if (xhead < xtail && yhead > ytail) {
-        xtail--;
-        ytail++;
-    }
-
-    // Third quardrant
-    else if (xhead < xtail && yhead < ytail) {
-        xtail--;
+    else if (yhead < ytail) {
         ytail--;
     }
 
-    // Fourth quardrant 
-    else if (xhead > xtail && yhead < ytail) {
-        xtail++;
-        ytail--;
-    }
-
-}
-
-bool isTouching(int xhead, int xtail, int yhead, int ytail) {
-    if (abs(yhead - ytail) > 1 || abs(xhead - xtail) > 1) {
-        return false;
-    }
-    return true;
 }
 string moveHeadOnce(string headpos, char direction) {   
     int indexOfComma = headpos.find(",");
@@ -77,26 +62,32 @@ string moveTail(string headpos, string tailpos, char direction) {
     indexOfComma = tailpos.find(",");
     int xtail = stoi(tailpos.substr(1, indexOfComma - 1));
     int ytail = stoi(tailpos.substr(indexOfComma + 1, tailpos.size() - indexOfComma - 2));
-
-    // Tail move up/down in line with head
-    if (xhead == xtail && yhead == ytail) {
-        moveWithDirection(direction, xtail, ytail);
-    }
-    
-    else if (xhead == xtail && (abs(yhead - ytail) == 2)) {
-        moveWithDirection(direction, xtail, ytail);
-    } 
-    
-    // Tail move left/right in line with head
-    else if (yhead == ytail && (abs(xhead - xtail) == 2)) {
-       moveWithDirection(direction, xtail, ytail);
-    } 
     
     // Tail move up/down diagonally wrt head
-    else if (!isTouching(xhead, xtail, yhead, ytail) && xhead != xtail && yhead != ytail) {
-
+    if ((abs(xhead - xtail) > 1 && abs(xhead - xtail >= 1)) || ((abs(xhead - xtail) >= 1) && (abs(yhead - ytail) > 1))) {
         moveDiagonal(xhead, xtail, yhead, ytail);
 
+    } else {
+        if (abs(xhead - xtail) > 1) {
+            if (xhead > xtail) {
+                xtail++;
+            } 
+            else if (xhead < xtail) {
+                xtail--;
+            }
+        }  
+        
+        if (abs(yhead - ytail) > 1) {
+            if (yhead > ytail) {
+                ytail++;
+            }
+
+            else if (yhead < ytail) {
+                ytail--;
+            }
+
+        } 
+    
     }
 
     string coordFinal;
@@ -108,8 +99,8 @@ int main() {
     string myText;
     vector<string> command;
 
-    ifstream myFile("C:\\Users\\User\\Desktop\\Harry\\aoc2022\\aoc2022\\Day 9\\input.txt");
-    ofstream outFile("C:\\Users\\User\\Desktop\\Harry\\aoc2022\\aoc2022\\Day 9\\output.txt");
+    ifstream myFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\aoc2022\\Day 9\\input.txt");
+    ofstream outFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\aoc2022\\Day 9\\output.txt");
     
     string coordOfHead = "(0,0)";
     string coordOfTail = "(0,0)";
@@ -135,8 +126,6 @@ int main() {
         // prevDirection = direction;
         
     }
-    outFile << endl << posHistory.size() << endl;
-    outFile << operationPerformed; // Answer: 6494 - incorrect
-
-    // 5953 - Wrong Answer
+    cout << endl << posHistory.size() << endl;
+    outFile << operationPerformed; // Wrong Answer: 6337
 }

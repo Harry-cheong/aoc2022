@@ -1,6 +1,7 @@
 #include <string> 
 #include <iostream>
 #include <fstream>
+#include <deque>
 
 using namespace std; 
 
@@ -10,7 +11,7 @@ int main() {
     int myInt;
     int data[1000] = {};
 
-    ifstream myReadFile("C:\\Users\\User\\Desktop\\Harry\\aoc2022\\aoc2022\\Day 1\\input.txt");
+    ifstream myReadFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\aoc2022\\Day 1\\Part 1\\input.txt");
     int i = 0;
     int sumOfCalories = 0;
 

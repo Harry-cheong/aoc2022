@@ -1,0 +1,27 @@
+## Algorithms
+
+# Functions
+
+    1. sort(perimeter1, perimeter2, perimeter3)
+    * perimeter1: the beginning of the array
+    * perimeter2: the end of the array
+    * perimeter3: we can pass the greater() function to sort in descending order
+
+    e.g. 
+    int main() 
+    {
+        vector<int> num;
+
+        // Creating a vector that looks like {1, 5, 8, 9, 6, 7, 0, 2}
+        num.push_back(1);
+        num.push_back(5);
+        num.push_back(8);
+        num.push_back(9);
+        num.push_back(6);
+        num.push_back(7);
+        num.push_back(0);
+        num.push_back(2);
+        
+        // Sort the vector
+        sort(num.begin(), num.end(), greater<int>());
+    }
