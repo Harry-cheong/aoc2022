@@ -1,0 +1,7 @@
+## CMath 
+* can be used with <cmath> library
+    1. cbrt()
+    2. cell() -> rounds to highest nearest integer
+    3. sqrt() -> takes square root
+    4. round() -> rounds to nearest integer
+    ... a lot of other math functions

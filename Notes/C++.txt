@@ -1,11 +1,41 @@
-## Introduction
+__________________ Note Structure __________________
 
-#TO-READ
+|\ [Chapter] /|
+
+| [Chapter Topic] |
+* -> [Highlights]
+~Syntax~ -> [Template of how to use it]
+    1. -> [Sub-point]
+    - -> [Info]
+    e.g. -> [Example of use case]
+<-> -> [Link to other chapter]
+
+
+_________________ Difficulty Level __________________
+
+[[🌟]]  - Easy
+[[🌟]][[🌟]] - Intermediate
+[[🌟]][[🌟]][[🌟]] - Hard
+
+______________________ TO-READ ______________________
+
 - https://www.geeksforgeeks.org/generics-in-c/
 - https://www.geeksforgeeks.org/templates-cpp/
 
 
-# C++ 
+__________________ Getting Started ___________________
+
+* https://www.freecodecamp.org/news/how-to-compile-your-c-code-in-visual-studio-code/
+
+In summary
+    1. MinGW Installation Manager
+    2. Download g++ compiler in MinGW
+    3. Edit Environment Var, include "C:\MinGW\bin\"
+    4. Download coderunner extension
+
+___________________ Introduction ___________________
+
+| [🌟] C++ | 
 * OOP -> clear structure to programs and allows code to be resued
 
 * Used for high performance applications 
@@ -13,21 +43,12 @@ e.g. operating systems, graphical user interfaces and embedded systems
 
 * high level of control over system resources and memory 
 
-# C vs C++
+| [🌟] C vs C++  |
 * C and C++ support classes and objects, while C does not
 
-## Getting Started
-* https://www.freecodecamp.org/news/how-to-compile-your-c-code-in-visual-studio-code/
+______________________ Basics ______________________
 
-In summary
-1. MinGW Installation Manager
-2. Download g++ compiler in MinGW
-3. Edit Environment Var, include "C:\MinGW\bin\"
-4. Download coderunner extension
-
-## Basics
-
-# Header Files
+| [🌟] Header Files |
 * Header files add functionality to C++ programs
 e.g.
 #include <iostream> // Written on line 1; <iostream> is a header file library which contains the functions of program like cout, cin, etc. 
@@ -37,7 +58,7 @@ e.g.
 
 <-> Notable Header Files 
 
-# Code structure
+| [🌟] Code Structure |
     1. Header Files
 
     2. Namespace
@@ -53,14 +74,14 @@ e.g.
 
     4. return 0 ends the main function
 
-# QoL
+| [🌟] QoL |
 * // -> single line comment
 * /* ...  */ -> multi-line comment
 
 
-## Variables
+_____________________ Variable _____________________
 
-# Identifiers 
+| [🌟] Identifiers |
 * Naming Conventions 
 - contain letters, digits and underscores
 - cannot contain whitespaces or special characters like !, #, %, etc 
@@ -69,13 +90,13 @@ e.g.
 - reserved words 
 
 
-# Const 
-* Add-on to declare var as Const
+| [🌟] Constants |
+* using const
 e.g. const int myNum = 15;
 e.g. const double = 3.99;
 
 
-# Types
+| [🌟] Types |
     1. int -> stores integers (whole numbers), without decimals 
 
     2. double -> stores floating point numbers, with decimals 
@@ -103,7 +124,7 @@ e.g. const double = 3.99;
     * declare a variable without assigning the value, and assigning the value later
 
 
-# multiple
+| [🌟] Multi Declaration |
     1. declaring same var, but diff values
     e.g. int x - 5, y = 6, z = 50;
 
@@ -112,7 +133,7 @@ e.g. const double = 3.99;
     int x, y, z;
     x = y = z = 50;
 
-# Type Conversion
+| [🌟] Type Conversion |
     1. char -> int
     * char, in this case, is an int with char type
     * mainly used when iterating through string
@@ -134,13 +155,14 @@ e.g. const double = 3.99;
     int fav = "93893289";
     string convFav = to_string(fav);
 
-## Output w. cout 
+______________________ Output ______________________
+
 * (pronounced "see-out") and uses the insertion operator (<<)
 * multiple cout objects on different lines do not create multiple line outputs
 e.g. cout << "Hello World"
 
 
-# Special chars
+| [🌟] Special Characters |
     1. \n -> incl in str to create blank line
     OR using endl 
     e.g. count << "Hello World" << endl;
@@ -155,45 +177,29 @@ e.g. cout << "Hello World"
     e.g. cout << "I am" << myAge << " years old." 
 
 
-## Input w cin 
+_______________________ Input ________________________
+
 * pronounced as "see-in" and uses the extraction operator (>>)
 * to enable input in integrated terminal: File > Preference > Settings > Code Runner: Run in Terminal (tick box)
 
+| [🌟] Input Line |
+* using getline()
 
-## Advanced File Handling
+[~Syntax~]
+~
+istream& getline(istream& is, 
+           string& str, char delim);
+~
+* is: whr the input is
+* str: input stored in this object
+* delim:  tells when to stop reading further input 
 
-    1. ofstream file
-    
-    e.g. 
-    // Creation of ofstream class object
-    ofstream fout; 
-
-    string line; 
-
-    // by default ios::out mode, automatically deletes
-    // the content of file. To append the content, open in ios:app 
-    // fout.oen("sample.txt", ios::app)
-
-    // Execute a loop if file successfully opened
-        while (fout) {
-
-            // Read a line from standard input
-            getline(cin, line);
-    }
-
-    2. ifstream file
-
-    e.g. 
-    // Creation of fstream class object
-    fstrem fio;
-
-    string line; 
-
-    // by deafult openmode = ios::in|ios::out mode
-    // Automatically overwrites the content of file, TO 
+<-> fstream.txt (Advanced File Handling)
 
 
-## Arithmetic Operators 
+_____________________ Operators ______________________
+
+| [🌟] Arithemetic Operators |
 * Very similar to javascript, python
 
     1. + 
@@ -205,24 +211,21 @@ e.g. cout << "Hello World"
     7. -- -> Decrement
 
 
-## Assignment Operators
-
-# Augmented operators 
+| [🌟] Augmented Assignment Operators |
     1. +=
     2. -=
     3. *=
     4. /=
-    5. % =
+    5. %=
 
-# Bitwise operators
+| [🌟][🌟][🌟] Bitwise Operators |
     1. &=
     2. |
     3. ^=
     4. >>=
     5. <<=
 
-
-## Comparison operators
+| [🌟] Comparison Operators |
     1. == 
     2. !=
     3. >
@@ -230,17 +233,17 @@ e.g. cout << "Hello World"
     5. >=
     6. <=
 
-
-## Logical Operators 
+| [🌟] Logical Operators |
     1. && -> Logical and
     2. || -> Logical or
     3. ! -> Logical not
 
 
-## Strings
+______________________ Strings _______________________
+
 * To use strings, include <string> library in the header file 
 
-# String Concatenation 
+| [🌟] String Concatenation |
     1. using '+' operator
     e.g. string fullName = firstName + lastName;
 
@@ -251,10 +254,10 @@ e.g. cout << "Hello World"
     string fullName = firstName.append(lastName);
     cout << fullName
 
-# Indexing
+| [🌟] Indexing |
 * access the characters in str w index no inside []
 
-# Methods
+| [🌟] Methods |
     **1. substr()
     [syntax] 
     ~
@@ -265,27 +268,14 @@ e.g. cout << "Hello World"
 
     2. length() OR size() -> returns the length of a string 
 
-# Functions 
+| [🌟] Functions |
     1. getline() -> used w. cin to print > 1 word 
     e.g. 
     getline(cin, fullName);  -> accepts more than one word as input 
 
 
-## char 
+________________ If-else Statements ________________
 
-# Functions
-    1. 
-
-
-## Math 
-* can be used with <cmath> library
-    1. cbrt()
-    2. cell() -> rounds to highest nearest integer
-    3. sqrt() -> takes square root
-    4. round() -> rounds to nearest integer
-    ... a lot of other math functions
-
-## Conditions and If statements 
 * Exactly the same as javascript
 
 [Syntax] 
@@ -300,7 +290,7 @@ e.g. cout << "Hello World"
     }
 ~ 
 
-# Tenary Operator 
+| [🌟][🌟] Ternaray Operator |
 
 [Syntax] ~variable = (condition) ? expressionTrue : expressionFalse; ~
 
@@ -322,7 +312,7 @@ e.g. cout << "Hello World"
     })
 ~
 
-# Keywords
+| [🌟] Keywords |
     1. break 
     * stop exec of more code and case testing inside the block 
 
@@ -332,9 +322,9 @@ e.g. cout << "Hello World"
     3. continue 
     * the continue statement breaks one iteration of the loop
 
-## While-loop
+_______________________ Loops _______________________
 
-    1. default while loop
+| [🌟] white-loops |
     [Syntax] 
     ~
         while (condition) {
@@ -342,7 +332,7 @@ e.g. cout << "Hello World"
         }
     ~
 
-    2. do... if loop
+| [🌟] do-if loop |
     * Loop will always be executed at least once, even if the condition is false, because the code block is executed before condition is tested
     [Syntax] 
     ~
@@ -352,7 +342,7 @@ e.g. cout << "Hello World"
     while (condition);
     ~
 
-## for loop
+_____________________ For-loop _____________________
 
 [Syntax]
 ~
@@ -369,10 +359,10 @@ for (int i =0; i < 5; i++) {
     cout << i << "\n"
 }
 
-# Nested Loops
+| [🌟] Nested Loops |
 * The "inner loop" will be executed one time for each iteration of the "outer loop" 
 
-# foreach loop
+| [🌟] for iterable in iterator loop |
 [Syntax] for (type variableName : arrayName) {
     // code block to be executed 
 }
@@ -383,15 +373,15 @@ for (type variableName : arrayName) {
 }
 
 
-## Arrays
+______________________ Arrays ______________________
 
-# Declaration
+| [🌟] Declaration |
 * To declare an array, define the variable type, specify the name of the array followed by sqr brackets and specify the number of elements it should store.
 * Good practice to provide size; omission of it will result in a size to be automatically determined by compiler 
 
 e.g. string cars[3] = {'Volvo', 'BMW' , 'Ford'};
 
-# code snippets 
+| [🌟] Code Snippets |
 * assigning value to next available slot 
 e.g. 
 string list[100];
@@ -402,10 +392,10 @@ while (i<100) {
 }
 
 
-# Functions 
+| [🌟] Functions |
     1. sizeof() -> to get the size of an array 
 
-# mdarray 
+| [🌟] mdarray |
 * an array of Arrays
 e.g. 
 string letters[2][4] = {
@@ -415,11 +405,12 @@ string letters[2][4] = {
 cout << letters[0][2]; // Outputs "C"
 
 
-## Structure
+_____________________ Structure _____________________
+
 * group several related vars into one place
 * contain many different data types (int, string, bool, etc.)
 
-1. Creating a structure 
+| [🌟] Creating a Structure |
 * Two types 
 [Case #1] struct car {...} -> named structure
 * By giving a name to the structure, you can treat it as a data type 
@@ -438,25 +429,27 @@ struct {
 } myStructure
 ~
 
-2. Accessing structure members 
+| [🌟] Accessing structure members |
 * To assess members of a structure, use the dot syntax (.)
 
 e.g. 
 myStructure.myNum = 1
 
 
-## References and Pointers
+______________ References and Pointers ______________
+
 * are important because they give you the ability to manipulate the data in the computer's memory - which can reduce the code and improve the performance. 
 
 
-## Reference variable 
+____________________ References ____________________
+
 * is a "reference" to an existing var, and it is created with the & operator 
 e.g. 
 string food = "Pizza";
 string &meal = food; // Ref. var meal created
 
 
-# Memory Address
+| [🌟][🌟] Memory Address |
 * when we assign a value to the variable, it is stored in this memory address. 
 
     1. Finding address
@@ -469,12 +462,21 @@ string &meal = food; // Ref. var meal created
         e.g. 
         string meal;
         cout << *meal;
+    
+| [🌟][🌟][🌟] Creating a list/vector of references |
+* using reference_wrapper<type> 
+
+e.g. 
+    int num = 9;
+    vector<referecne_wrapper<int>> referenceList;
+    referenceList.push_back(&num);
 
 
-## Pointers 
+_____________________ Pointers _____________________
+
 * stores the memory address as its value 
 
-# Creating pointers 
+| [🌟] Creating pointers |
 * type of the pointer has to match the type of variable you're working with 
 
 e.g. 
@@ -482,7 +484,7 @@ string food = "Pizza"; // A food variable of type string
 string* ptr = &food; // A pointer varialbe, with the name ptr, that stores the address of food
 * ptr holds the value of food's memory address
 
-# Reference and Dereference 
+| [🌟][🌟] Ref and Dref Operators |
 * Reference operator '&'
 * Dereference operator '*'
 
@@ -494,15 +496,12 @@ cout << ptr;
 // Dereference: Output the value of food with the pointer 
 cout << *ptr;
 
-# Changing value of pointers
 e.g. 
-...
+// Changing value of pointers
 *ptr = "Hamburger"
 
 
-## Functions 
-
-# Basics 
+_____________________ Functions _____________________
 * a funct consist of two parts: Declaraton and Definition
 [Syntax]
 ~
@@ -511,17 +510,18 @@ void myFunction(parameter1, parameter2, parameter3) { -> Declaration
 }
 ~
 
-# Keywords
+| [🌟] Function Type |
     1. void 
     * the void keyword indicates that the function should not return a value 
 
     2. int, string, etc data types.
     * the fn will return a value
 
-    3. return 
+| [🌟] Function Keywords |
+    1. return 
     * returns the result 
 
-# Parameters and Arguments
+| [🌟] Parameters and Arguments |
 * when a parameter is passed to the fn, it is called an argument. 
 
 e.g. 
@@ -533,13 +533,13 @@ int main() {
 }
 * fname is a parameter, while Liam, Jenny and Anja are arguments 
 
-# Parameter - value
+| [🌟] Default Argument |
 e.g. 
 void myFunction(string country = "Norway") {
     cout < country << endl;
 }
 
-# Parameter - address
+| [🌟][🌟] Passing references as arguments |
 * by passing a reference to the fn, this can be useful when you need to change the value of the arguments 
 * (*) and (&) operator used
 
@@ -548,10 +548,10 @@ void swapNums(int &x, int &y) {
     ...
 }
 
-# Overloading Functions 
+| [🌟] Overloading Functions |
 * Multiple functions can have the same name as long as the number and/or type of parameters are different. 
 
-# Recursion
+| [🌟] Recursion |
 * fn calling itself 
 
 e.g. 
@@ -568,14 +568,33 @@ int main() {
     return 0;
 }
 
+| [🌟][🌟][🌟] Variadic Function |
+* are templates that take a variable length argument
+* a variable num of args are represented by three dots (...)
+<-> cstdargh.txt
 
-## Object Oriented Programming (aka OOP)
+e.g.
+int sum(int count, ...) {
+    int res = 0;
+    va_list ap;
+    va_start(ap, num);
+    for (int i = 0; i < num; i++) {
+        res += va_arg(ap, int);
+    }
+
+    // Return the resultant sum
+    return res;
+}   
+
+
+____________ Object Oriented Programming ____________
+
 * OOP is faster and easier to executed
 * OOP provides a clear structure for the programs
 * OOP helps to keep code dry and makes the code easier to maintain, modify and debug
 * OOP makes it possible to create full reusuable appliations with less code and shorter development time
 
-# Create a class
+| [🌟] Creating a class |
 * using the class keyword
 e.g. 
 class MyClass {             // The class
@@ -586,7 +605,7 @@ class MyClass {             // The class
 * the public keyword is an access specifier, which specifies that members of the class are accessible from outside the class
 * inside the class, there are 2 attributes
 
-# Class Methods 
+| [🌟] Defining class methods |
 
     #1 Inside class definition
     e.g. 
@@ -610,26 +629,47 @@ class MyClass {             // The class
         cout << "Hello World!";
     }
 
-# Constructors 
+| [🌟][🌟] Accessing Instance Attributes |
+* using this to refer current class instance variable
+
+e.g. 
+class Employee {
+    public: 
+        int id;
+        string name;
+
+        void update(int id, string name) {
+            this -> id = id;
+            this -> name = name;
+        }
+}
+
+
+
+| [🌟][🌟] Constructors |
 * is a special method that is automatically called when an object of a class is created
 * to create a constructor, use the same name as the class, followed by parentheses()
 * like class methods, constructors can be defined inside or outside the class
 
 e.g. 
-    class MyClass {
-        public:
-            MyClass(parameter1, parameter2 ...) { // setting initial values for attributes
-                ...
-            }
-    }
+class MyClass {
+    public:
+        MyClass(parameter1, parameter2 ...) { // setting initial values for attributes
+            ...
+        }
+}
 
-# Access specifier
+int main() {
+    MyClass Juvenescent(parameter1, paramet2);
+}
+
+| [🌟] Access Specifiers |
 * public - members are accessible from outside the class
 * private - members cannot be accessed from outside the class
 * protected - members cannot be accessed from outside the class, however, they can be accessed in inherited classes. 
 * Note: by default, all members of a class are private if you don't specify an access specifier
 
-# Encapsulation
+| [🌟] Encapsulation |
 * make sure that "sensitive" data is hidden from users
 * if you want others to read or modify the value of a private member, you can provide public get and set methods
 
@@ -646,10 +686,9 @@ e.g.
             coid setSalary(int s) {
                 salary = s;
             }
-z
     }
 
-// Inheritance
+| [🌟][🌟] Inheritance |
 * derived class (child) - the class that inherits from another class
 * base class (parent) - the class being inherited 
 * use the : symbol
@@ -665,13 +704,13 @@ class Car: public Vehicle {
     ...
 }
 
-// Multi-level Inheritance
+| [🌟][🌟] Multi-level Inheritance |
 * a class can also be derived from one class
 
-// Multiple Inheritance
+| [🌟][🌟] Multiple Inheritance |
 * a class can also be derived from more than one base class, using a comma-separated list
 
-// Polymorphism 
+| [🌟][🌟] Polymorphism |
 * means "many forms" and it occurs when we have many classes that are related to each other by Inheritance
 * uses those methods to perform different tasks
 * useful for code reusuability: reuse attributes and methods of an existing class when you create a new class
@@ -692,13 +731,19 @@ class Pig: public Animal {
         }
 }
 
-# Exceptions
-* Exception Handing consist of three keywords: try, throw and catch:
-* keyword 'try' : allows you to define a block of code to be tested for errors while it is being executed
-* keyword 'throw': throws an exception when a problem is detected which lets us create a custom errors
-* keyword 'catch' : allows you to define a block of code to be executed, if an error occurs in the try block 
+________________ Exception Handling ________________
 
-[Syntax]
+| [🌟] Keywords |
+    1. try
+    - allows you to define a block of code to be tested for errors while it is being executed
+
+    2. throw
+    - throws an exception when a problem is detected which lets us create a custom errors
+
+    3. catch
+    - allows you to define a block of code to be executed, if an error occurs in the try block 
+
+[~Syntax~]
 ~
 try {
     // Block of code to try
@@ -709,7 +754,8 @@ catch() {
 }
 ~
 
-* Handle any type of exceptions (...)
+| [🌟] Exception - Any type |
+* using (...)
 e.g.
 try {
     int age = 15;
