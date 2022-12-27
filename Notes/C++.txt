@@ -209,7 +209,7 @@ _____________________ Operators ______________________
     5. % -> returns the division remainder
     6. ++ -> Increment
     7. -- -> Decrement
-
+    (Note: ** is a pointer to a pointer in c++; does not raise the number to the power specified)
 
 | [🌟] Augmented Assignment Operators |
     1. +=

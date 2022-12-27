@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <filesystem>
 
 using namespace std;
 
@@ -15,8 +16,9 @@ int main() {
 
     string myText;
     int lineInFile = 0;
-    ifstream inFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++.txt");
-    ofstream outFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++new.txt");
+
+    ifstream inFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++ libraries\\utility.txt");
+    ofstream outFile("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++ libraries\\newutility.txt");
 
     // Variables
     
@@ -110,8 +112,8 @@ int main() {
     outFile.close();
 
 
-    remove("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++.txt");
-    if (rename("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++new.txt", "C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++.txt") != 0) {
+    remove("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++ libraries\\utility.txt");
+    if (rename("C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++ libraries\\newutility.txt", "C:\\Users\\harry\\Desktop\\Computing\\aoc2022\\Notes\\C++ libraries\\utility.txt") != 0) {
         cout << "No such File or directory";
     } else {
         cout << "Successful";

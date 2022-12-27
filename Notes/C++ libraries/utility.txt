@@ -1,0 +1,39 @@
+________________ Utility Header File ________________
+
+_______________________ Pair _______________________
+
+* is immutable; can be copies with changes
+
+| [🌟] Constructor |
+    * constructs a pair object with its elements value-initialized
+    e.g. 
+    pair <int, int> product;
+
+| [🌟][🌟] Member Functions |
+    1. make_pair()
+    - allows to create a value pair without writing the types explicitly
+
+    [~Syntax~]
+    ~
+    Pair_name = make_pair(value1, value2);
+    ~
+
+    2. swap()
+    * swaps the contents of one pair object with the contents of another pair object 
+
+    [~Syntax~]
+    ~
+    pair1.swap(pair2);
+    ~
+
+    3. tie()
+
+
+
+
+
+
+
+
+
+

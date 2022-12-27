@@ -1,7 +1,19 @@
 ## CMath 
 * can be used with <cmath> library
     1. cbrt()
+    
     2. cell() -> rounds to highest nearest integer
+
     3. sqrt() -> takes square root
+
     4. round() -> rounds to nearest integer
+
+    5. pow()
+
+    [~Syntax~]
+    ~
+    double pow(double x, double y);
+    ~
+    * x: floating point base value
+    * y: floating point power value
     ... a lot of other math functions

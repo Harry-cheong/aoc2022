@@ -1,0 +1,148 @@
+__________________ A* Pathfinding __________________
+
+https://www.growingwiththeweb.com/2012/06/a-pathfinding-algorithm.html
+
+https://www.geeksforgeeks.org/a-search-algorithm/
+
+https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
+
+https://www.redblobgames.com/pathfinding/a-star/implementation.html
+https://www.redblobgames.com/pathfinding/a-star/implementation.cpp
+
+| [🌟][🌟] What is A* Pathfinding? |
+* A* Search Algorithm is one of the best and popular technique used in path-finding and graph traversals
+
+| [🌟][🌟] Why A* Pathfinding? |
+* it has "brains"; is really smart a smart algorithm
+
+
+| [🌟][🌟] Explanation |
+Consider a square grid having many obstacles and we are given a starting cell and a target call. We want to reach the target cell (if possible) from the starting cell as quickly as possible.
+
+* Picks the node according to a value - 'f' which is a parameter equal to the sum of two other parameters - 'g' and 'h'
+
+* At each step it picks the node/cell having the lowest 'f', and process that node/cell
+
+g = the movement cost to move fromt he starting point to a given square on the grid, following the path generated to get there. 
+
+h = the estimated movement cost to move from that given square on the grid to the final destination; often referred to as the heuristic
+
+| [🌟][🌟] Algorithm |
+* we create two lists - Open List and Closed List (just like Djikstra Algorithm)
+
+    1. Initialize the open list
+    * The open list is a collection of all generated nodes. This means that those are nodes that were neighbours of expanded nodes. As mentioned aboce, the open list is often implemented as a priority queue so tha tthe search can simply dequee the next best node.
+
+    2. Initialise the closed list
+    * The closed list is a collection of all expanded nodes. This means that those are nodes that were already "searched". This prevents the search from visiting nodes again and again. A side note: in big doamins, the closed list can't fit al nodes, so the closed list has to be implemented in smartly 
+
+    - Put the starting node on the open
+    - List (you can leave its f at zero)
+
+    3. while the open list is not empty
+        a) find the node with the least f on the open list, call it "q" 
+
+        b) pop q off the open list
+
+        c) generate q's 8 successors and set their parents to q
+
+        d) for each successor
+            i) if successor is the goal, stop Search
+
+            ii) else, compute both g and h for successor 
+            - successor.g = q.g + distance between successor and q
+            - successor.h - distance from goal to successor (This can be done using many ways, we will explore three heuristics - Manhatten, Diagonal and Euclidean Heuristics)
+            - successor.f = successor.g + successor.h 
+
+            iii) if a node with the same position as successor is in the OPEN list which has a lower f than successor, skip this successor
+
+            iv) if a node with the same position as successor is in the CLOSED list which has a lower f than successor, skip this successor otherwise, add the node to the open list end (for loop)
+
+        e) push q on the closed list 
+        end (while loop)
+
+| [🌟][🌟] Exact Heuristics |
+* Find exact values of h, that is generally very time consuming 
+* Below are some of the methods to calculate the exact value of h
+    1. Pre-compute the distance between each pair of cells before running the A* Search Algorithm
+
+    2. If there are no blocked cells/obstacles then we can just find the exact value of h without any pre-computation using the distance formula/Euclidean Distance 
+
+| [🌟][🌟][🌟] Approximation Heuristics |
+* Generally three methods, Manhatten, Diagonal and Euclidean distance
+
+| [🌟][🌟][🌟] Approx. Heuristics - Manhatten Distance |
+* absolute values of differences in the goal's X and Y and the current cell's X and Y coordinates respectively 
+
+i.e. 
+h = abs(current_cell.x - goal.x) + abs(current_cell.y - goal.y)
+
+* When to use? - When we are allowed to move only in four directions only (right, left, top, bottom)
+
+
+| [🌟][🌟][🌟] Approx. Heuristics - Diagonal Distance (uniform cost) |
+* the maximum of absolute values of differences in the goal's x and y coordinates and the current cell's x and y coordinates respectively 
+
+i.e.
+dx = abs(current_cell.x - goal.x)
+dy = abs(current_cell.x - goal.y)
+
+h = D * (dx + dy ) + (D2 - 2 * D) * min(dx, dy)
+
+where D is length of each node (usually = 1) and D2 is diagonal distance between each node (usually = sqrt(2))
+
+When to use this? - When we are allowed to move in eight directions only (similar to a move of a King in Chess)
+
+| [🌟][🌟][🌟] Approx. Heuristics - Euclidean Distance |
+* Distance Formula 
+
+i.e. 
+h = sqrt((current_cell.x - goal.x)^2 + (current_cell.y - goal.y)^2)
+
+When to use this? - When we are allowed to move in any directions
+
+| [🌟][🌟][🌟] Pseudocode |
+
+// A* (star Pathfinding)
+
+// Initialise both open and closed list
+let the openList equal empty list of nodes
+let the closedList equal empty list of nodes
+
+// Add the start node
+put the startNode on the openList (leave it's f at zero)
+
+// Loop until you find the end
+while the openList is not empty 
+
+    // Get the current node 
+    let the currentNode equal the node with the least f value 
+    remove the currentNode from the openList 
+    add the currentNode to the closedList
+
+    // Found the goal 
+    if currentNode is the goal 
+        Congratz! Goal Found
+    
+    // Generate children
+    let the children of the currentNode equal the adjacent nodes
+
+    for each child in the children
+
+        // Child is on the closedList 
+        if child is in the closedList
+            continue to beginning of for loop
+
+        // Create the f, g, and h values 
+        child.g = currentNode.g + distance between child and current 
+        child.h = distance from child to end 
+        chidl.f = child.g + child.h
+
+        // Child is already in openList
+        if child.position is in the openList's nodes positions
+            if the child. g is higher than the openList node's g 
+                continue to beginning of for loop
+        
+        // Add the child to the openList
+        add the child to the openList
+    
