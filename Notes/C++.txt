@@ -140,7 +140,7 @@ e.g. const double = 3.99;
     * using int() -> uses typecasting
     e.g. 
     char fav = '1';
-    int convFav = int(fav - "0");
+    int convFav = int(fav - '0');
 
     2. char/string -> int
     * a int, with string type, will be converted to int; however the same does not apply to char
